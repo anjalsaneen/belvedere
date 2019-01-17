@@ -286,7 +286,7 @@ public class Belvedere {
         public Builder(Context context) {
             this.context = context;
             this.logger = new L.DefaultLogger();
-            this.debug = false;
+            this.debug = true;
         }
 
         /**
