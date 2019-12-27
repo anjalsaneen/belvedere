@@ -1,33 +1,29 @@
-<p align="center">
+# Testing Readme
 
-# Belvedere
-<p align="left">
-<a href="https://travis-ci.org/zendesk/belvedere"><img src="https://travis-ci.org/zendesk/belvedere.svg?branch=master" alt="Build Status" /></a> <a href="http://zendesk.github.io/belvedere"><img src="https://img.shields.io/readthedocs/pip.svg" /></a>
-<a href="https://mvnrepository.com/artifact/com.zendesk.belvedere2/belvedere"><img src="https://img.shields.io/maven-central/v/com.zendesk.belvedere2/belvedere.svg" alt="Belvedere version" /></a><a href="https://oss.sonatype.org/content/repositories/snapshots/com/zendesk/belvedere2/belvedere/"> <img src="https://img.shields.io/nexus/s/https/oss.sonatype.org/com.zendesk.belvedere2/belvedere.svg" /></a>
-<a href="https://raw.githubusercontent.com/zendesk/belvedere/master/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License" /></a>
-</p>
+ \# Belvedere- Testing Readme
 
-A file picker for Android.
-<br />
+ [![Build Status](https://travis-ci.org/zendesk/belvedere.svg?branch=master)](https://travis-ci.org/zendesk/belvedere) [![](https://img.shields.io/readthedocs/pip.svg)](http://zendesk.github.io/belvedere) [![Belvedere version](https://img.shields.io/maven-central/v/com.zendesk.belvedere2/belvedere.svg)](https://mvnrepository.com/artifact/com.zendesk.belvedere2/belvedere) [![](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.zendesk.belvedere2/belvedere.svg)](https://oss.sonatype.org/content/repositories/snapshots/com/zendesk/belvedere2/belvedere/) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://raw.githubusercontent.com/zendesk/belvedere/master/LICENSE)
 
-<p align="center">
-<img width="300" src="https://raw.githubusercontent.com/zendesk/belvedere/master/media/belvedere_stream_demo.gif"/>
-</p>
+A file picker for Android.   
 
-### Overview
+
+![](https://raw.githubusercontent.com/zendesk/belvedere/master/media/belvedere_stream_demo.gif)
+
+## Overview
+
 Belvedere gives you the power to easily integrate file selection from third party apps and the camera without the need to take care of permissions, ContentProvider, Intent permissions, and so on.
 
-### Download
+## Download
 
 Add Belvedere as a dependency:
 
-```
+```text
 compile ‘com.zendesk.belvedere2:belvedere:2.2.0’
 ```
 
-### How to use Belvedere
+## How to use Belvedere
 
-#### ImageStream
+### ImageStream
 
 A simple implementation of the ImageStream looks like this:
 
@@ -78,8 +74,7 @@ public class TestActivity extends AppCompatActivity implements ImageStream.Liste
 }
 ```
 
-#### Dialog (from 1.x)
-
+### Dialog \(from 1.x\)
 
 ```java
 public class TestActivity extends AppCompatActivity {
@@ -117,7 +112,7 @@ public class TestActivity extends AppCompatActivity {
 }
 ```
 
-#### API only
+### API only
 
 Select an image from the camera.
 
@@ -165,16 +160,18 @@ public class TestActivity extends AppCompatActivity {
 }
 ```
 
+### Place a file into Belvedere’s internal storage
 
-#### Place a file into Belvedere’s internal storage
 Moreover, it’s possible to put your own data into Belvedere’s cache. To get access to an internal file, call:
 
 ```java
 MediaResult mediaResult = Belvedere.from(this).getFile("dire_name", "file_name.jpg");
 ```
+
 Again, you’ll get a file object and a `Uri`. For example, you can use the file to open a `FileOutputStream`.
 
-#### Open or share an internal file
+### Open or share an internal file
+
 Files that are available through Belvedere could be opened or shared with other apps. To do that, use the `Uri` you get from a `BelvedereResult`.
 
 Use the first code snippet to open a file and the second one to share a file:
@@ -189,27 +186,28 @@ Intent shareIntent = Belvedere.from(this).getShareIntent(mediaResult.getUri(), m
 startActivity(shareIntent);
 ```
 
-### Picasso Compatibility
-Belvedere uses [Picasso Compat](https://github.com/schlan/picassocompat) which provides compatibility
-between Picasso 2.5.2 and Picasso 2.71828. This allows us to support both versions with needing to release
-a `-PCOMP` version to support users of differing versions.
+## Picasso Compatibility
 
+Belvedere uses [Picasso Compat](https://github.com/schlan/picassocompat) which provides compatibility between Picasso 2.5.2 and Picasso 2.71828. This allows us to support both versions with needing to release a `-PCOMP` version to support users of differing versions.
 
-### Contributing
+## Contributing
 
 Bug reports, feature requests and contributions are very welcome. Please follow these steps to contribute:
- - Submit a Pull Request with a detailed explanation of changes and screenshots (if UI is changing). Tests would be great too!
- - One of the core team members will review your changes.
- - After successful code review, you’ll receive a :+1: and the changes will be merged by one of the core members.
+
+* Submit a Pull Request with a detailed explanation of changes and screenshots \(if UI is changing\). Tests would be great too!
+* One of the core team members will review your changes.
+* After successful code review, you’ll receive a :+1: and the changes will be merged by one of the core members.
 
 If you’re submitting a bug report, please try to follow these steps:
- - Search through the open and closed issues, maybe there is already an issue describing exactly the same problem.
- - Describe the issue as detailed as possible. Try to describe the expected and the actual outcome.
- - Add reproduction steps. If possible provide sample code that showcases the issue.
- - Provide a failing test.
 
-### License
-```
+* Search through the open and closed issues, maybe there is already an issue describing exactly the same problem.
+* Describe the issue as detailed as possible. Try to describe the expected and the actual outcome.
+* Add reproduction steps. If possible provide sample code that showcases the issue.
+* Provide a failing test.
+
+## License
+
+```text
 Copyright 2018 Zendesk
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
